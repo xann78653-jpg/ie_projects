@@ -1,0 +1,135 @@
+[Scia Reto](https://sciareto.org) mind map   
+> __version__=`1.1`,showJumps=`true`
+---
+
+# PYTHON STUDYYYY
+> mmd.emoticon=`tree`
+
+
+## 交互模式和直接运行
+> leftSide=`true`
+
+
+## 输入与输出\(均为str类型\)
+> collapsed=`true`,leftSide=`true`
+
+
+### 输出\(,为空格\)
+
+### 输入\-转换成整数:s = input\('birth: '\)<br/>birth = int\(s\)
+
+## 数据类型与变量
+> collapsed=`true`,leftSide=`true`
+
+
+### 数据类型:1\.整数型2\.浮点型
+
+### 3\.字符型\(转义符:\\n\.换行\\t\.制表\\\\单独字符\)4\.布尔值5\.空值
+
+### 6\.list①位置的排列0,\-1②append追加,insert插入,pop删除,=调换位置\(list里面类型可以不一样\)
+
+### 7\.tuble\(不可更改\)类型有t\(\)t\(1,\)t\(1,2,3\)
+
+### 变量
+> collapsed=`true`
+
+
+#### 常量
+> collapsed=`true`
+
+
+##### /,//,%
+
+#### 变量
+
+## 字符编码与格式化
+> collapsed=`true`
+
+
+### 字符编码\(进制转换\)三种编码的使用差异
+
+### 格式化:
+> collapsed=`true`
+
+
+#### %d整数型print\('%2d\-%02d' % \(3, 1\)\)
+
+#### %f浮点型<br/>print\('%\.2f' % 3\.1415926\)<br/>
+
+#### %s字符串
+
+#### format\(\)\>\>\> 'Hello, \{0\}, 成绩提升了 \{1:\.1f\}%'\.format\('小明', 17\.125\)<br/>'Hello, 小明, 成绩提升了 17\.1%'<br/>
+
+#### f\-string\>\>\> r = 2\.5<br/>\>\>\> s = 3\.14 \* r \*\* 2<br/>\>\>\> print\(f'The area of a circle with radius \{r\} is \{s:\.2f\}'\)<br/>The area of a circle with radius 2\.5 is 19\.62<br/>
+
+## 模式匹配\(if条件语句的升级版\)
+> collapsed=`true`
+
+
+### 使用match语句时，我们依次用case xxx匹配，并且可以在最后（且仅能在最后）加一个case \_表示“任意值”age = 15<br/><br/>match age:<br/>    case x if x \< 10:<br/>        print\(f'\< 10 years old: \{x\}'\)<br/>    case 10:<br/>        print\('10 years old\.'\)<br/>    case 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18:<br/>        print\('11~18 years old\.'\)<br/>    case 19:<br/>        print\('19 years old\.'\)<br/>    case \_:<br/>        print\('not sure\.'\)<br/>
+
+## 循环
+> collapsed=`true`
+
+
+### for in循环&while循环
+
+### break结束循环
+
+### continue跳过本轮循环
+
+## dic&set
+> collapsed=`true`,leftSide=`true`
+
+
+### dic:d = \{'Michael': 95, 'Bob': 75, 'Tracy': 85\}\(key\(非list\)\-value\)
+
+### set: s = \{1, 2, 3\}<br/>不储存value
+
+## 函数
+> collapsed=`true`
+
+
+### 调用函数
+> collapsed=`true`
+
+
+#### 参数类型,数量
+
+#### 数据类型转换
+
+### 定义函数
+> collapsed=`true`
+
+
+#### pass空函数
+
+#### def my\_abs\(x\):<br/>    if not isinstance\(x, \(int, float\)\):<br/>        raise TypeError\('bad operand type'\)<br/>    if x \>= 0:<br/>        return x<br/>    else:<br/>        return \-x<br/>数据类型检查
+
+#### print函数,输出结果是return值
+
+### 函数的参数
+> collapsed=`true`
+
+
+#### 位置参数,默认参数\(定义默认参数要牢记一点：默认参数必须指向不变对象！\)
+
+#### 可变参数def calc\(\*numbers\):<br/>    sum = 0<br/>    for n in numbers:<br/>        sum = sum \+ n \* n<br/>    return sum<br/>先组装出list & tuble
+
+#### 关键字参数:和可变参数类似，也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去def person\(name, age, \*\*kw\):<br/>    print\('name:', name, 'age:', age, 'other:', kw\)<br/>
+
+#### 命名关键字参数:def person\(name, age, \*args, city, job\):<br/>    print\(name, age, args, city, job\)<br/>
+
+### 递归函数
+> collapsed=`true`
+
+
+#### 如果一个函数在内部调用自身本身，这个函数就是递归函数。\(尾递归:尾递归是指，在函数返回的时候，调用自身本身，并且，return语句不能包含表达式\)def fact\(n\):<br/>    return fact\_iter\(n, 1\)<br/><br/>def fact\_iter\(num, product\):<br/>    if num == 1:<br/>        return product<br/>    return fact\_iter\(num \- 1, num \* product\)<br/>
+
+## 高级特性
+> leftSide=`true`
+
+
+### 切片:\>\>\> L\[:10:2\]<br/>\[0, 2, 4, 6, 8\]<br/>
+
+### 迭代:list,tuble,dic\(默认情况下，dict迭代的是key。如果要迭代value，可以用for value in d\.values\(\)，如果要同时迭代key和value，可以用for k, v in d\.items\(\)\)判断可否迭代\>\>\> from collections\.abc import Iterable<br/>\>\>\> isinstance\('abc', Iterable\) \# str是否可迭代<br/>True<br/>\>\>\> isinstance\(\[1,2,3\], Iterable\) \# list是否可迭代<br/>True<br/>\>\>\> isinstance\(123, Iterable\) \# 整数是否可迭代<br/>False<br/>
